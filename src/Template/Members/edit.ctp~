@@ -1,0 +1,24 @@
+<div class="col-md-3">
+    <div class="btn-group-vertical">
+        <?= $this->Html->link(__('List Members'), ['action' => 'index'], ['class'=>'btn btn-link']) ?>
+        <?= $this->Html->link(__('List Subscriptions'), ['controller' => 'Subscriptions', 'action' => 'index'], ['class'=>'btn btn-link']) ?>
+        <?= $this->Html->link(__('New Subscription'), ['controller' => 'Subscriptions', 'action' => 'add'], ['class'=>'btn btn-link']) ?>
+    </div>
+</div>
+<div class="col-md-9">
+    <?= $this->Form->create($member, ['role'=>'form']) ?>
+        <legend><?= __('Edit Member') ?></legend>
+        <?php
+            echo $this->Form->input('name1',['class'=>'form-control']);
+            echo $this->Form->input('name2',['class'=>'form-control']);
+            echo $this->Form->input('sex',['class'=>'form-control']);
+            echo $this->Form->input('stream',['class'=>'form-control']);
+            echo $this->Form->input('rank',['class'=>'form-control', 'id'=>'rank', 'type'=>'text']);
+            echo $this->Form->input('division',['class'=>'form-control', 'id'=>'division', 'type'=>'text']);
+            echo $this->Form->input('post',['class'=>'form-control']);
+            echo $this->Form->input('email',['class'=>'form-control']);
+        ?>
+    <?= $this->Form->button(__('Edit'),['class'=>'btn btn-primary']) ?>
+    <?= $this->Form->end() ?>
+</div>
+<?= $this->element('choices')?>

@@ -1,0 +1,9 @@
+<?php
+class NavHelper extends Helper {
+	public function add(array $ar) {
+		$links = [];
+		foreach (['Entries','Subscriptions','Members'] as $c) {
+			$link[$c] = 'index';
+		}
+		return $this->_view->render('nav'
+		

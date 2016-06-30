@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 17, 2015, 4:45:30 PM
+    Author     : cp_liu
+*/
+.editing {
+    background-color: blue;
+    color: white;
+}
+.select {
+	width: 300px;
+	height: 250px;
+	border: 1px solid #ccc;
+	overflow: auto
+}
+.option {
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: default
+}
+.active {
+	background-color: #FFD799
+}

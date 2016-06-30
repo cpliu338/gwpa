@@ -1,0 +1,13 @@
+/index.php
+webroot/index.php
+vendor/*
+plugins/*
+tmp/*
+tests/*
+nbproject/*
+logs/*
+phpunit.xml.dist
+composer.*
+bin/*
+config/app*
+webroot/img/cake*

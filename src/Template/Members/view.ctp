@@ -1,0 +1,56 @@
+
+    <h2><?= h($member->name) ?></h2>
+        <dl class="dl-horizontal">
+            <dt><?= __('Sex') ?></dt>
+            <dd><?= h($member->sex) ?></dd>
+            <dt><?= __('Stream') ?></dt>
+            <dd><?= h($member->stream) ?></dd>
+            <dt><?= __('Rank') ?></dt>
+            <dd><?= h($member->rank) ?></dd>
+            <dt><?= __('Division') ?></dt>
+            <dd><?= h($member->division) ?></dd>
+            <dt><?= __('Post') ?></dt>
+            <dd><?= h($member->post) ?></dd>
+            <dt><?= __('Email') ?></dt>
+            <dd><?= h($member->email) ?></dd>
+            <dt><?= __('Updated at') ?></dt>
+            <dd><?= h($member->updated_at) ?></dd>
+        </dl>
+<div class="related row">
+    <button class="btn btn-info" data-toggle="collapse" data-target="#related"><?= __('Related Subscriptions') ?></button>
+    <div id="related" class="collapse">
+    <?php if (empty($member->subscriptions)): ?>
+        <div>None</div>
+    <?php else: ?>
+    <table  class="table table-striped">
+        <thead>
+        <tr>
+            <th><?= __('Year1') ?></th>
+            <th><?= __('Batch') ?></th>
+            <th class="actions"><?= __('Actions') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($member->subscriptions as $subscriptions): ?>
+        <tr>
+            <td><?= h($subscriptions->year1) ?></td>
+            <td><?= h($subscriptions->batch) ?></td>
+
+            <td class="actions">
+                <?= $this->Html->link(__('View'), ['controller' => 'Subscriptions', 'action' => 'view', $subscriptions->id]) ?>
+
+                <?= $this->Html->link(__('Edit'), ['controller' => 'Subscriptions', 'action' => 'edit', $subscriptions->id]) ?>
+
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Subscriptions', 'action' => 'delete', $subscriptions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $subscriptions->id)]) ?>
+
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php endif; ?>
+    </div>
+
+
+</div>
